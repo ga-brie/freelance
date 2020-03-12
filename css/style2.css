@@ -1,0 +1,33 @@
+@charset "UTF-8"
+    /* CSS DOCUMENT */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    border:none;
+}
+
+#contenitore {
+    width: 400px;
+    margin: 10px auto;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    float: left;
+    margin: 8px 7px;
+}
+
+ul li:first-child {
+    margin-left: 0;
+}
+
+ul li:last-child {
+    margin-right: -5px;
+    margin-left: 5px;
+}

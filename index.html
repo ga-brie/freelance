@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web designer &amp; front end developer freelance a Treviso Padova Montebelluna</title>
+    <meta name="description" content="web designer &amp; front end developer freelance a Padova. Offro la mia consulenza alle aziende per migliorare la propria visibilit&agrave; sul web">
+    <meta name="author" content="Mind_Gabri">
+    <meta name="copyright" content="Copyright Mind SRL">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--    // Includi font special-->
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800&display=swap" rel="stylesheet">
+
+     <script src="https://kit.fontawesome.com/c1d717e264.js" crossorigin="anonymous"></script>
+
+    <!--    // Includi jquery generale-->
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script src="js/jquery.color-2.1.2.min.js"></script>
+
+    <!--    // Includi libreria responsive Tabs-->
+
+    <script src="js/jquery.responsiveTabs.js"></script>
+
+    <link rel="stylesheet" href="css/responsive-tabs.css">
+
+     <!--    // Includi libreria datepicker-->
+
+    <script src="js/datepicker-it.js"></script>
+
+    <!--    // Includi libreria backstretch-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js"></script>
+
+    <!--    // Includi libreria parallax-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"></script>
+
+
+    <!--    // Includi libreria Fancy Box-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!--    // Includi Slick-->
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/slick.min.js"></script>
+
+
+    <script>
+        /*menu a tendina */
+        $(document).ready(function() {
+            $(".drop-down").click(function(event) {
+            $("#menu ul li ul").slideToggle();
+            event.preventDefault();
+            });
+
+        /* sticky menu */
+            var stick = $('#contenitore_logo_menu');
+            var posizione = stick.position();
+
+            $(window).scroll(function(){
+            if ($(this).scrollTop() >= posizione.top +90){
+            stick.addClass("menu_scroll");
+            } else{
+            stick.removeClass("menu_scroll"); 
+            }
+            });
+        /*scorrimento ancore interne interne */
+        /*href^=# tutti i link che hanno un href che inizia con # ma non solo il cancelletto */
+            $("a[href^='#']:not([href='#'], #horizontalTab ul li a[href^='#'])").click(function(event){
+            $('html, body').animate({
+            scrollTop: $($(this).attr('href'))
+            .offset().top - 150}, 1000);
+            event.preventDefault();
+            });
+
+        /*slider principale*/
+            $("#slider").backstretch([
+            "img/slider.png",
+            "img/slider2.jpg",
+            "https://picsum.photos/1200/500?random=1",
+            "https://picsum.photos/1200/500?random=2",
+            "https://picsum.photos/1200/500?random=3"
+            ], {
+            fade: 1500,
+            duration: 2000
+            });
+            $('#successiva').click(function(e){
+            e.preventDefault();
+            $('#slider').data('backstretch').next();
+            });
+            $('#precedente').click(function(e) {
+            e.preventDefault();
+            $('#slider').data('backstretch').prev();
+            });
+
+          /* Fancybox */
+
+            $('[data-fancybox="gallery"]').fancybox({
+
+            });
+
+        /* responsive tabs function */
+            var pril = $('#horizontalTab');
+            pril.responsiveTabs({
+            rotate:false,
+            collapsible: 'accordion'
+            });
+
+        /* Slider per News */
+
+            $('.slider_news').slick();
+
+
+        }); // end document ready
+</script>
+</head>
+<body>
+    <div id="contenitore">
+        <header id="slider">
+            <div id="contenitore_logo_menu">
+                <div id="logo_menu" class="padding_fasce">
+                    <div id="logo">
+                        <a href="index.html" title="Vai alla pagina index">
+                            <img src="img/freelance.png" alt="Freelance - sito personale" width="180" height="22">
+                        </a>
+                    </div>
+                    <nav id="menu">
+                        <ul>
+                            <li><a class="current" href="index.html" title="Vai alla pagina index">Home</a></li>
+                            <li><a href="#competenze" title="Vai alla pagina Chi sono">Chi sono</a></li>
+                            <li>
+                                <a class="drop-down" href="#portfolio" title="Vai alla pagina portfolio">Portfolio</a>
+                                <ul>
+                                    <li class="sottomenu"><a href="grafica-pubblicitaria.html" title="Vai alla pagina Grafica Pubblicitaria">Grafica Pubblicitaria</a></li>
+                                    <li class="sottomenu"><a href="web-design.html" title="Vai alla pagina Web Design">Web Design</a></li>
+                                    <li class="sottomenu"><a href="marketing.html" title="Vai alla pagina Marketing">Marketing</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#news" title="Vai alla pagina News">News</a></li>
+                            <li><a href="#footer" title="Vai alla sezione contatti">Contatti</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div id="testo_slider">
+                <h1 id="h1_slider" class="titoletto centrato">Lorem ipsum dolor sit amet.</h1>
+                <p id="paragrafo_slider" class="centrato">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+                <a href="#" class="leggi_tutto bianco" title="Visualizza la pagina">leggi tutto</a>
+                <a href=""></a>
+                <a href="#" id="precedente" title="Visualizza immagine precedente"> Precedente</a>
+                <a href="#" id="successiva" title="Visualizza immagine Successiva"> Successiva</a>
+            </div>
+        </header>
+        <!--Fine Slider-->
+        <div id="competenze">
+            <div>
+                <aside id="colonna_sx">
+                    <p class="titoletto">Lorem ipsum dolor sit amet</p>
+                    <h2 class="h2_grigio">Competenze</h2>
+                    <p class="testo_nero competenze">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li id="design" class="testo_nero">Design</li>
+                        <li id="html" class="testo_nero">HTML5</li>
+                        <li id="ecommerce" class="testo_nero">E-Commerce Development</li>
+                        <li class="testo_nero">Web Design</li>
+                        <li class="testo_nero">Illustrator</li>
+                        <li class="testo_nero">Art Director</li>
+                    </ul>
+                    <audio src="audio/heaven.mp3" controls></audio>
+                    <!--<audio controls>
+           <source src="audio/lady-gaga.mp3" type="audio/mp3">
+           <source src="audio/lady-gaga.ogg" type="audio/ogg">
+       </audio>-->
+                </aside>
+                <aside id="colonna_dx">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8dRc5fkG770" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </aside>
+            </div>
+        </div>
+        <!--Fine competenze-->
+
+
+        <section id="portfolio">
+            <p class="titoletto centrato">Lorem ipsum dolor sit amet</p>
+            <h2 class="h2_grigio centrato">Portfolio</h2>
+
+            <div class="contenitore_riquadri clearfix">
+
+                <div class="riquadro_portfolio">
+                    <figure>
+                       <a class="lightbox" href="img/cool-architecture.jpg" alt="" width="454" height="404" data-fancybox data-caption="Cool Architecture">
+                            <img src="img/cool-architecture.jpg" alt="" width="227" height="202">
+                        </a>
+                        <!--<figcaption>Esempio didascalia immagine</figcaption>-->
+                    </figure>
+                    <p class="testo_riquadri">Lorem ipsum dolor sit amet</p>
+                    <a class="link_portfolio" href="#" title="">leggi tutto</a>
+                </div>
+                <div class="riquadro_portfolio">
+                    <figure>
+                         <a class="lightbox" href="img/shazam.jpg" alt="" width="454" height="404" data-fancybox data-caption="Shazam">
+                            <img src="img/shazam.jpg" alt="" width="227" height="202">
+                        <!--<figcaption>Esempio didascalia immagine</figcaption>-->
+                        </a>
+                    </figure>
+                    <p class="testo_riquadri">Lorem ipsum dolor sit amet</p>
+                    <a class="link_portfolio" href="#" title="">leggi tutto</a>
+                </div>
+                <div class="riquadro_portfolio">
+                    <figure>
+                       <a class="lightbox" href="img/model.jpg" alt="" width="454" height="404" data-fancybox data-caption="Model">
+                            <img src="img/model.jpg" alt="" width="227" height="202">
+                        </a>
+                        <!--<figcaption>Esempio didascalia immagine</figcaption>-->
+                    </figure>
+                    <p class="testo_riquadri">Lorem ipsum dolor sit amet</p>
+                    <a class="link_portfolio" href="#" title="">leggi tutto</a>
+                </div>
+                <div class="riquadro_portfolio">
+                    <figure>
+                        <a class="lightbox" href="img/terrific-dining-experience.jpg" alt="" width="454" height="404" data-fancybox data-caption="Terrific Dining Experience">
+                            <img src="img/terrific-dining-experience.jpg" alt="" width="227" height="202">
+                        </a>
+                        <!--<figcaption>Esempio didascalia immagine</figcaption>-->
+                    </figure>
+                    <p class="testo_riquadri">Lorem ipsum dolor sit amet</p>
+                    <a class="link_portfolio" href="#" title="">leggi tutto</a>
+                </div>
+
+            </div><!-- contenitore_riquadri -->
+            <!--<div class="clear"></div>-->
+            <a href="#" class="leggi_tutto grigio" title="leggi tutto portfolio">leggi tutto</a>
+        </section>
+        <!--Fine portfolio-->
+
+        <div id="approccio"
+           class="parallax-window"
+           data-parallax="scroll"
+           data-image-src="img/city.jpg">
+            <div id="sfondo_verde" class="padding_fasce">
+                <h2 class="h2_bianco">Approccio</h2>
+                <p id="testo_approccio" class="testo_nero">
+                    Lorem ipsum dolor sit amet, Lorem ipsum <br>dolor sit amet, Lorem ipsum dolor sit amet
+                </p>
+                <a href="#" class="leggi_tutto grigio" title="leggi tutto">leggi tutto</a>
+            </div>
+
+            <div id="primo" class="pallino verde">
+                <div class="interno_pallino">
+                    <p class="titoletto centrato">Lorem <span>branding</span></p>
+                </div>
+            </div>
+
+            <div id="secondo" class="pallino arancio">
+                <div class="interno_pallino">
+                    <p class="titoletto centrato">Lorem <span>branding</span></p>
+                </div>
+            </div>
+
+            <div id="terzo" class="pallino verde">
+                <div class="interno_pallino">
+                    <p class="titoletto centrato">Lorem <span>branding</span></p>
+                </div>
+            </div>
+        </div>
+        <!--Fine approccio-->
+
+        <section id="testimonial">
+            <p class="titoletto centrato">Lorem ipsum dolor sit amet</p>
+            <h2 class="padding_titolo h2_grigio centrato">Testimonial</h2>
+
+            <div class="riquadro_testimonial">
+                <figure><img src="img/renzo_rosso.jpg" alt="Renzo Rosso" width="101" height="101"></figure>
+                <p class="testo_nero">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    <br><span>Renzo Rosso -- AD Diesel</span>
+                </p>
+            </div>
+            <div class="riquadro_testimonial">
+                <figure><img src="img/renzo_rosso.jpg" alt="Renzo Rosso" width="101" height="101"></figure>
+                <p class="testo_nero">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    <br><span>Renzo Rosso -- AD Diesel</span>
+                </p>
+            </div>
+            <div class="riquadro_testimonial">
+                <figure><img src="img/renzo_rosso.jpg" alt="Renzo Rosso" width="101" height="101"></figure>
+                <p class="testo_nero">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    <br><span>Renzo Rosso -- AD Diesel</span>
+                </p>
+            </div>
+            <div class="riquadro_testimonial">
+                <figure><img src="img/renzo_rosso.jpg" alt="Renzo Rosso" width="101" height="101"></figure>
+                <p class="testo_nero">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    <br><span>Renzo Rosso -- AD Diesel</span>
+                </p>
+            </div>
+
+        </section>
+        <!--Fine testimonial-->
+
+
+        <div id="metodo" class="padding-fasce">
+            <p class="titoletto centrato">Lavoro in modo impeccabile</p>
+            <h2 class="h2_grigio centrato padding_titolo">Metodo</h2>
+            <div id="horizontalTab">
+
+                <ul class="clearfix">
+                <li> <a id="brainstorming" href="#tab-1">Brainstorming</a></li>
+                <li> <a id="wireframe" href="#tab-2">Wireframe</a></li>
+                <li> <a id="development" href="#tab-3">Development</a></li>
+                <li> <a id="global" href="#tab-4">Global Head</a></li>
+                </ul>
+
+                <div id="tab-1">
+                    <p>1 -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis velit possimus distinctio aliquam, optio placeat.</p>
+                </div>
+                <div id="tab-2">
+                    <p>2 -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis velit possimus distinctio aliquam, optio placeat.</p>
+                </div>
+                 <div id="tab-3">
+                    <p>3 -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis velit possimus distinctio aliquam, optio placeat.</p>
+                </div>
+                 <div id="tab-4">
+                    <p>4 -Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis velit possimus distinctio aliquam, optio placeat.</p>
+                </div>
+
+            </div>
+
+       </div>
+        <!--Fine metodo-->
+
+        <section id="news">
+            <h2 class="titoletto centrato">Ultime news</h2>
+            <div class="slider_news">
+                <div>
+                    <h3 class="h2_grigio centrato">Nuovo contratto firmato con Maserati</h3>
+                    <figure>
+                        <img class="immagine_news" src="img/porsche.jpg" alt="Maserati?" width="136" height="137">
+                    </figure>
+                    <p class="testo_news">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                    <a class="leggi_tutto grigio" href="#" title="Visualizza news">leggi tutto</a>
+                </div>
+                <div>
+                    <h3 class="h2_grigio centrato">Nuovo contratto firmato con Ferrari</h3>
+                    <figure>
+                        <img class="immagine_news" src="img/ferrari.png" alt="Maserati?" width="136" height="137">
+                    </figure>
+                    <p class="testo_news">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                    <a class="leggi_tutto grigio" href="#" title="Visualizza news">leggi tutto</a>
+                </div>
+                <div>
+                    <h3 class="h2_grigio centrato">Nuovo contratto firmato con Lamborghini</h3>
+                    <figure>
+                        <img class="immagine_news" src="img/lamborghini.png" alt="lamborghini" width="136" height="137">
+                    </figure>
+                    <p class="testo_news">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                    <a class="leggi_tutto grigio" href="#" title="Visualizza news">leggi tutto</a>
+                </div>
+                </div>
+        </section>
+        <!--Fine news-->
+
+        <footer id="footer" class="gradient padding_fasce">
+            <h2 class="padding_titolo h2_bianco centrato">Resta aggiornato, iscriviti alla newsletter</h2>
+            <form id="contenitore_form" action="newsletter.php" method="post">
+                <input id="email_newsletter" type="email" name="newsletter" placeholder="Inserisci il tuo indirizzo email">
+                <input id="submit_newsletter" type="submit" value="Iscriviti">
+            </form>
+           <div class="clearfix">
+                <p class="contatti_footer">
+                    <span>Indirizzo</span><br>
+                    Via Savelli 56<br>
+                    35129 - Padova (PD)
+                </p>
+                <p class="contatti_footer">
+                    <span>Contatti</span><br>
+                    049 4488322<br>
+                    info@greelance.com
+               </p>
+               <nav>
+                  <ul class="menu social">
+                       <li><a class="google" href="#" title="Google+">Google+</a></li>
+                       <li><a class="facebook" href="#" title="Facebook">Facebook</a></li>
+                       <li><a class="twitter" href="#" title="Twitter">Twitter</a></li>
+                       <li><a class="linkedin" href="#" title="Linkedin">Linkedin</a></li>
+                   </ul>
+               </nav>
+           </div>
+           <p id="copy">Copyright 2019 @ Freelance - All right reserved.</p>
+        </footer>
+        <!--Fine footer-->
+    </div>
+    <!--contenitore-->
+
+<! -- back to top -->
+<a id="top" href="#contenitore" title="up">
+    <img src="img/top_link.png" alt="Torna su" width="66" height="66">
+</a>
+</body>
+</html>
